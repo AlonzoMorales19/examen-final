@@ -20,10 +20,48 @@ public class Proveedor {
     @Column(name = "telefono")
     private String telefono;
 
-    // Relación: Un proveedor puede tener muchos movimientos (el 'mappedBy' apunta al campo 'proveedor' en la entidad Movimiento)
     @OneToMany(mappedBy = "proveedor")
     private Set<Movimiento> movimientos;
 
-    // Getters y Setters
-    // ... (Omitidos por brevedad, pero debes generarlos)
+    // --- GETTERS Y SETTERS (La corrección) ---
+
+    public Integer getIdProveedor() {
+        return idProveedor;
+    }
+
+    public void setIdProveedor(Integer idProveedor) {
+        this.idProveedor = idProveedor;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public Set<Movimiento> getMovimientos() {
+        return movimientos;
+    }
+
+    public void setMovimientos(Set<Movimiento> movimientos) {
+        this.movimientos = movimientos;
+    }
 }

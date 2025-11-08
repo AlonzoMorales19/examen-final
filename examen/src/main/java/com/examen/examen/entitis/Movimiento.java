@@ -20,16 +20,61 @@ public class Movimiento {
     @Column(name = "cantidad")
     private Integer cantidad;
 
-    // Relación: Muchos movimientos pertenecen a Un Producto
     @ManyToOne
-    @JoinColumn(name = "id_producto") // Esta es la columna FK en la tabla 'movimiento'
+    @JoinColumn(name = "id_producto")
     private Producto producto;
 
-    // Relación: Muchos movimientos (de entrada) pertenecen a Un Proveedor
     @ManyToOne
-    @JoinColumn(name = "id_proveedor") // Esta es la columna FK en la tabla 'movimiento'
+    @JoinColumn(name = "id_proveedor")
     private Proveedor proveedor;
 
-    // Getters y Setters
-    // ... (Omitidos por brevedad, pero debes generarlos)
+    // --- GETTERS Y SETTERS (La corrección) ---
+
+    public Integer getIdMovimiento() {
+        return idMovimiento;
+    }
+
+    public void setIdMovimiento(Integer idMovimiento) {
+        this.idMovimiento = idMovimiento;
+    }
+
+    public LocalDateTime getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDateTime fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public Integer getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+
+    public Proveedor getProveedor() {
+        return proveedor;
+    }
+
+    public void setProveedor(Proveedor proveedor) {
+        this.proveedor = proveedor;
+    }
 }
